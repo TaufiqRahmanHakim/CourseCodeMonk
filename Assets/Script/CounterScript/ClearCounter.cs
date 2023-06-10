@@ -9,9 +9,12 @@ public class ClearCounter : BaseCounter
     {
         if (!HasKitchenObject())
         {
+            //tidak memiliki object dapur
             if (player.HasKitchenObject())
             {
+                //memiliki object dapur
                 player.GetKitchenObject().SetKitchenObjectPerent(this);
+                //memindahkan perent ke benda ini
             }
             else
             {
@@ -22,11 +25,21 @@ public class ClearCounter : BaseCounter
         {
             if (player.HasKitchenObject())
             {
+                if(player.GetKitchenObject() is PlateKitchenObject)
+                {
+                    //player memegang object plate
+                    PlateKitchenObject plateKitchenObject = player.GetKitchenObject() as PlateKitchenObject;
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
 
+                    }
+                }
             }
             else
             {
                 GetKitchenObject().SetKitchenObjectPerent(player);
+                //memindahkan perent ke player
             }
         }
     }
