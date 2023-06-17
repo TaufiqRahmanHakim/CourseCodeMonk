@@ -195,6 +195,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 250896385931500746}
+    - targetCorrespondingSourceObject: {fileID: 5291395581172850785, guid: 89fcd8589cf207d4abbbe5f0aafbb073,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5748667167992736687}
   m_SourcePrefab: {fileID: 100100000, guid: 89fcd8589cf207d4abbbe5f0aafbb073, type: 3}
 --- !u!1 &5184901073063372935 stripped
 GameObject:
@@ -215,6 +219,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTopPoint: {fileID: 8074230930338655887}
+--- !u!114 &5748667167992736687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184901073063372935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aabf348b2611c449b51f40c14bde383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeListSO: {fileID: 11400000, guid: 22edec6b76e365546a02e41573bce4e5, type: 2}
 --- !u!4 &5701130642074434990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4721131595110167880, guid: 89fcd8589cf207d4abbbe5f0aafbb073,

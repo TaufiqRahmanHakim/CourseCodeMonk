@@ -78,10 +78,7 @@ public class StoveCounter : BaseCounter, IHasProgressUI
                     {
                         GetKitchenObject().DestroySelf();
                         KitchenObject.SpawnKitchenObject(burningRecipeSO.output, this);
-
-                        Debug.Log("Object Burned!");
                         state = State.Burned;
-
                         OnStateChanged?.Invoke(this, new OnStateChangedEventArgs
                         {
                             state = state
@@ -97,7 +94,6 @@ public class StoveCounter : BaseCounter, IHasProgressUI
                 break;
 
             }
-            Debug.Log(state);
         }
         
     }
