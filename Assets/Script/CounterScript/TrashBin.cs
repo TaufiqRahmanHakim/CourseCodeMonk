@@ -1,19 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashBin : BaseCounter
 {
+    public static event EventHandler OnAnyObjectTrashed;
 
     public override void Interact(Player player)
     {
-        if (!HasKitchenObject())
+        if (player.HasKitchenObject())
         {
-            if (player.HasKitchenObject())
-            {
-                player.GetKitchenObject().SetKitchenObjectPerent(this);
-                GetKitchenObject().DestroySelf();
-            }
+            player.GetKitchenObject().DestroySelf();
+            OnAnyObjectTrashed?.Invoke(this, EventArgs.Empty);
         }
+ 
     }
 }

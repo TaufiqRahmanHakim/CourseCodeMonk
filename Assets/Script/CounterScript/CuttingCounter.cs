@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CuttingCounter : BaseCounter, IHasProgressUI
 {
+    public static event EventHandler OnAnyCut;
 
     public event EventHandler<IHasProgressUI.OnProgressChangedEventArgs> OnProgressChanged;
     
@@ -68,6 +69,7 @@ public class CuttingCounter : BaseCounter, IHasProgressUI
             cuttingProgress++;
 
             OnCut?.Invoke(this, EventArgs.Empty);
+            OnAnyCut?.Invoke(this, EventArgs.Empty);
 
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
