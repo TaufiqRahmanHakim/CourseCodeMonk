@@ -7,6 +7,11 @@ public class CuttingCounter : BaseCounter, IHasProgressUI
 {
     public static event EventHandler OnAnyCut;
 
+    new public static void ResetStaticData()
+    {
+        OnAnyCut = null;
+    }
+
     public event EventHandler<IHasProgressUI.OnProgressChangedEventArgs> OnProgressChanged;
     
     public event EventHandler OnCut; 
